@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nwd.BackOffice", "Nwd.BackOffice\Nwd.BackOffice.csproj", "{C38E58AF-920C-488B-B0A6-420D8B50B060}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nwd.FrontOffice", "Nwd.FrontOffice\Nwd.FrontOffice.csproj", "{9A01CCE5-C016-4E3A-BFCC-1124C6390083}"
@@ -12,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AD2E50
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusikMVC", "MusikMVC\MusikMVC.csproj", "{5C1C9CB1-2D38-476D-8A2A-0DB9D65D994B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{12216774-9E32-426F-BB73-5DE8FF08CF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12216774-9E32-426F-BB73-5DE8FF08CF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12216774-9E32-426F-BB73-5DE8FF08CF83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1C9CB1-2D38-476D-8A2A-0DB9D65D994B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1C9CB1-2D38-476D-8A2A-0DB9D65D994B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1C9CB1-2D38-476D-8A2A-0DB9D65D994B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1C9CB1-2D38-476D-8A2A-0DB9D65D994B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

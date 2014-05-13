@@ -11,6 +11,7 @@ namespace Nwd.BackOffice.Model
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Artist
     {
@@ -20,6 +21,7 @@ namespace Nwd.BackOffice.Model
         }
     
         public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
         public string Biography { get; set; }
         public Nullable<int> Song_Id { get; set; }

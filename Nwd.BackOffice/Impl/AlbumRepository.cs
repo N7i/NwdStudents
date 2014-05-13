@@ -83,7 +83,21 @@ namespace Nwd.BackOffice.Impl
             }
         }
 
+        public void DeleteAlbum(Album album)
+        {
+            if (album == null)
+            {
+                throw new ArgumentNullException("Aucun album");
+            }
 
+            using (var ctx = new NwdMusikEntities())
+            {
+                var albumToDelete = ctx.Albums.Find(album.Id);
+                if (albumToDelete != null)
+                    ctx.Albums.Remove(albumToDelete);
+                ctx.SaveChanges();
+            }
+        }
 
         public Album GetAlbumForEdit( int idAlbum )
         {
@@ -126,7 +140,7 @@ namespace Nwd.BackOffice.Impl
                     album.CoverImagePath = Path.Combine( directory, coverFileName );
                 }
 
-                ctx.Entry( album ).State = System.Data.EntityState.Modified;
+                ctx.Entry( album ).State = System.Data.Entity.EntityState.Modified;
                 //foreach( var e in ctx.ChangeTracker.Entries() )
                 //{
                 //    e.State = System.Data.EntityState.Modified;

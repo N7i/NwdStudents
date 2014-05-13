@@ -1,0 +1,19 @@
+﻿@using Nwd.BackOffice.Model
+@model List<Album>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<ul>
+    @foreach(Album album in Model)
+    {
+            
+            <li>@Html.ActionLink(album.Title, "DeleteAlbum", "Album", new {id = album.Id}, null)
+                <a href="/Admin/Album/Delete/@album.Id">Delete</a> </li>
+               
+    
+    }
+</ul>
+

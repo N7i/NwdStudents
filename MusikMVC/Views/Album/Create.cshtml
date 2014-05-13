@@ -1,0 +1,70 @@
+﻿@model Nwd.BackOffice.Model.Album
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<hr />
+
+<div class="row">
+    <div class="content">
+        @using (Html.BeginForm("Create", "Album", FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+                <label for="cover-image">Artiste Name</label>
+                @Html.TextBoxFor(m => m.Artist.Name, new { type = "text", @class = "form-control"  })
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                @Html.ValidationMessage("Title", "required field *")
+            </div>
+            <div class="form-group">
+                <label for="title">Duration</label>
+                @Html.TextBoxFor(m => m.Duration, new { @class = "form-control", type="time" })
+                @Html.ValidationMessage("Duration", "required field *")
+            </div>
+            <div class="form-group">
+                <label for="releasedate">Release Date</label>
+                @Html.TextBoxFor(m => m.ReleaseDate, new { id = "release-date", type = "datetime", @class = "form-control" })
+                @Html.ValidationMessage("Release Date", "required field *")
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                @Html.TextBoxFor(m => m.Type, new { @class = "form-control" })
+                @Html.ValidationMessage("Type", "required field *")
+            </div>
+            <div class="form-group">
+                <label for="cover-image">Cover Image</label>
+                @Html.TextBoxFor(m => m.CoverImagePath, new { type = "file", @class = "form-control" })
+                @Html.ValidationMessage("Cover Image", "required field *")
+            </div>
+            
+            <div id="tracks-container"></div>
+            <button class="btn btn-primary btn-large" id="tracks-button">Add tracks</button>
+         
+            <br /><br /><br />
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#release-date').datepicker({ dateFormat: 'dd/mm/yy' });
+        $("#tracks-button").click((function() {
+            var idx = 0;
+
+            return function () {
+                $("#tracks-container").append('<div class="form-group">'
+                       +' <input type="text" name="Tracks['+idx+'].Song.Name" />'
+                       +' <input type="file" name="Tracks['+idx+'].File" />'
+                    + ' </div>');
+                ++idx;
+                return false;
+            }
+        })());
+    });
+</script>

@@ -1,0 +1,24 @@
+﻿@using Nwd.BackOffice.Model
+@model List<Album>
+@{
+    ViewBag.Title = "Albums List";
+}
+
+<h2>Albums List</h2>
+<ul>
+
+    @foreach(Album album in Model)
+    {
+        <li>@album.Artist - @album.Title - @album.ReleaseDate
+            <a href="/Admin/Album/Delete/@album.Id">Delete</a>
+            <a href="/Admin/Album/Edit/@album.Id">Edit</a>
+            <ol style="list-style-type:decimal;">
+                @foreach (var track in album.Tracks)
+                {
+                    <li>@track.Song.Name</li>
+                }
+            </ol>
+        </li>
+    }
+</ul>
+
